@@ -1,42 +1,170 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* ========== Root Variables (Theme Setup) ========== */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: #2b2b2b;
+  background-color: #fbf8ee;
+  color-scheme: light;
+
+  /* Color Palette (Warm Neutral 2048 Vibe) */
+  --vin-3: #f9e9c8;
+  --vin-5: #f3dba2;
+  --vin-7: #f5c16e;
+  --vin-9: #eea95f;
+  --vin-11: #e58c4d;
+  --vin-13: #da7242;
+  --vin-15: #c65d3d;
+  --vin-17: #b44a32;
+  --vin-19: #9c3c2b;
+  --vin-21: #7b2f23;
+  --vin-22: #632319;
+  --vib-1: #ffcf3f;
+  --vib-3: #ffd966;
+  --vib-6: #ffb347;
+
+  --board-bg: var(--vin-21);
+  --tile-text: #2b2b2b;
+  --text-dark: #6c675d;
+}
+
+/* ========== Page Defaults ========== */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+  background-color: var(--background-color);
+}
+
+/* ========== Main Game Container ========== */
+.gameMainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ========== Header ========== */
+.gameHeader {
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+/* Title Styling */
+.gameTitle {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 900;
+    font-size: clamp(2rem, 5vw, 4rem); /* responsive */
+    color: #2b2b2b; /* main text color */
+    text-align: center;
+    letter-spacing: 0.05em;
+    user-select: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); /* subtle depth */
+    transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+
+.gameTitle:hover {
+    transform: scale(1.05);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* Board Container */
+.boardContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+label {
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* Responsive Headings */
+@media (max-width: 768px) {
+  .gameTitle {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+
+  .boardContainer {
+    margin-top: 15px;
+  }
+}
+
+/* Responsive for small screens */
+@media (max-width: 480px) {
+  .gameHeader {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .gameTitle {
+    font-size: 1.8rem;
+  }
+}
+
+/* ========== Buttons ========== */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  border-color: #646cff;
+  background-color: #333;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* ========== ScoreBoard Styling for Better Look ========== */
+.ScoreBoard {
+  background: #fffaf1;
+  padding: 16px 24px;
+  border-radius: 16px;
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.2);
+  border: 2px solid #000000;
+  display: inline-block;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.ScoreBoard h2,
+.ScoreBoard h3 {
+  margin: 4px 0;
+  font-weight: 600;
 }

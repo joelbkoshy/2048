@@ -1,0 +1,44 @@
+/*========== Root Color Palette ==========*/
+:root {
+  /* Vibrant neon hues (vib) */
+  --vib-1: #7df9ff;   /* Electric cyan */
+  --vib-2: #2fff2f;   /* Bright green */
+  --vib-3: #ff00f5;   /* Neon magenta */
+  --vib-4: #3300ff;   /* Deep neon blue */
+  --vib-5: #ffff00;   /* Bright yellow */
+  --vib-6: #ff4911;   /* Vibrant orange-red */
+
+  /* Vintage-inspired pastel tones (vin) */
+  --vin-1: #daf5f0;   /* Mint ice */
+  --vin-2: #a7dbd8;   /* Seafoam */
+  --vin-3: #87ceeb;   /* Sky blue */
+  --vin-4: #69d2e7;   /* Cool cyan */
+  --vin-5: #b5d2ad;   /* Sage green */
+  --vin-6: #bafca2;   /* Light lime */
+  --vin-7: #90ee90;   /* Pastel green */
+  --vin-8: #7fbcbc;   /* Muted teal */
+  --vin-9: #fdfd96;   /* Soft yellow */
+  --vin-10: #ffdb58;  /* Goldenrod */
+  --vin-11: #f4d73b;  /* Amber */
+  --vin-12: #e3a018;  /* Warm orange */
+  --vin-13: #f8d6b3;  /* Peach */
+  --vin-14: #ffa07a;  /* Salmon */
+  --vin-15: #ff7a5c;  /* Coral red */
+  --vin-16: #ff6b6b;  /* Soft crimson */
+  --vin-17: #fcdfff;  /* Lavender blush */
+  --vin-18: #ffc0cb;  /* Pink */
+  --vin-19: #ffb2ef;  /* Hot pink */
+  --vin-20: #ff69b4;  /* Deep pink */
+  --vin-21: #e3dff2;  /* Soft lilac (for board background) */
+  --vin-22: #c4a1ff;  /* Light violet */
+  --vin-23: #a388ee;  /* Purple tint */
+  --vin-24: #9723c9;  /* Deep violet */
+
+  /* Text */
+  --text-dark: #2b2b2b;
+  --text-light: #ffffff;
+  --tile-text: #000;
+
+  /* Board background */
+  --board-bg: var(--vin-21);
+}

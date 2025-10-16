@@ -1,0 +1,121 @@
+/*========== Root Variables (for 2048 vibe) ==========*/
+:root {
+    --tile-0: #f0f0f0;
+    --tile-2: var(--vin-3);
+    --tile-4: var(--vin-5);
+    --tile-8: var(--vin-7);
+    --tile-16: var(--vin-9);
+    --tile-32: var(--vin-11);
+    --tile-64: var(--vin-13);
+    --tile-128: var(--vin-15);
+    --tile-256: var(--vin-17);
+    --tile-512: var(--vin-19);
+    --tile-1024: var(--vin-22);
+    --tile-2048: var(--vib-1);
+    --tile-4096: var(--vib-3);
+    --board-bg: var(--vin-21);
+    --text-dark: #2b2b2b;
+    --tile-text: #000;
+}
+
+/*========== Board ==========*/
+.board {
+    display: inline-block;
+    background: var(--board-bg);
+    padding: clamp(10px, 2vw, 20px);
+    border-radius: 20px;
+    box-shadow: 6px 8px #000000;
+    border: 4px solid #000000;
+    transition: all 0.2s ease;
+    user-select: none;
+    max-width: 95vw;
+    width: auto;
+}
+
+.board:active {
+    transform: scale(0.97);
+    box-shadow: 2px 4px #000000;
+}
+
+/*========== Rows ==========*/
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+/*========== Cells ==========*/
+.cell {
+    aspect-ratio: 1 / 1;
+    width: clamp(50px, 18vmin, 90px);
+    margin: clamp(2px, 0.5vmin, 6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 600;
+    font-size: clamp(1rem, 3vmin, 1.5rem);
+    border-radius: 12px;
+    border: 2px solid #000000;
+    color: var(--tile-text);
+    box-shadow: 4px 6px #000000;
+    transition: all 0.25s ease;
+    text-align: center;
+}
+
+/*========== Tile Colors ==========*/
+.cell-0 { background: var(--tile-0); opacity: 0.5; }
+.cell-2 { background: var(--tile-2); }
+.cell-4 { background: var(--tile-4); }
+.cell-8 { background: var(--tile-8); }
+.cell-16 { background: var(--tile-16); }
+.cell-32 { background: var(--tile-32); }
+.cell-64 { background: var(--tile-64); color: #fff; }
+.cell-128 { background: var(--tile-128); color: #fff; }
+.cell-256 { background: var(--tile-256); color: #fff; }
+.cell-512 { background: var(--tile-512); color: #fff; }
+.cell-1024 { background: var(--tile-1024); color: #fff; }
+.cell-2048 { background: var(--tile-2048); color: #fff; animation: pulseGlow 1.5s infinite alternate; }
+.cell-4096 { background: var(--tile-4096); color: #fff; animation: pulseRed 1.5s infinite alternate; }
+
+/*========== Animations ==========*/
+@keyframes pulseGlow {
+    from { box-shadow: 0 0 10px var(--tile-2048), 4px 6px #000000; }
+    to { box-shadow: 0 0 25px var(--tile-2048), 6px 8px #000000; }
+}
+
+@keyframes pulseRed {
+    from { box-shadow: 0 0 10px var(--vib-6), 4px 6px #000000; }
+    to { box-shadow: 0 0 25px var(--vib-6), 6px 8px #000000; }
+}
+
+/*========== Hover Effects ==========*/
+.cell:not(.cell-0):hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 8px #000000, 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/*========== Responsive Adjustments ==========*/
+/* Tablet */
+@media (max-width: 768px) {
+    .cell {
+        width: clamp(40px, 15vmin, 70px);
+        font-size: clamp(0.9rem, 2.5vmin, 1.2rem);
+    }
+
+    .board {
+        padding: clamp(8px, 1.5vw, 16px);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .cell {
+        width: clamp(35px, 12vmin, 60px);
+        font-size: clamp(0.8rem, 2vmin, 1rem);
+        margin: clamp(1px, 0.3vmin, 4px);
+    }
+
+    .board {
+        padding: clamp(6px, 1vw, 12px);
+    }
+}
